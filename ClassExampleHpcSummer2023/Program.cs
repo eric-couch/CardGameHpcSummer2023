@@ -5,11 +5,15 @@ internal class Program
     static void Main(string[] args)
     {
         Deck myCards = new Deck();
-
-        //myCards.Cards
-        foreach (Card thisCard in myCards.Cards)
+        
+        foreach (Card thisCard in myCards.DealCards(5) )
         {
-            Console.Write($"{thisCard.ToString()} ");
+            Console.Write($"{thisCard.ToString()}\t");
         }
+
+        //foreach (Card thisCard in myCards.Cards)
+        //{
+        //    Console.Write($"{thisCard.ToString()} ");
+        //}
     }
 }

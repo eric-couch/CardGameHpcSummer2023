@@ -21,7 +21,19 @@ public class Deck
         Initialize();
     }
 
-    // Initialize, Reset
+    public List<Card> DealCards(int numOfCards)
+    {
+        List<Card> Hand = new List<Card>();
+        Random rnd = new Random();
+        for (int i = 0; i < numOfCards; i++)
+        {
+            int cardToDeal = rnd.Next(Cards.Count);
+            Hand.Add(Cards[cardToDeal]);
+            Cards.RemoveAt(cardToDeal);
+        }
+        return Hand;
+    }
+
     public void Initialize()
     {
         List<string> suits = new List<string>() { "♠", "♦", "♣", "♥" };
