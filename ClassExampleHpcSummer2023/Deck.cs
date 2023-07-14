@@ -34,6 +34,11 @@ public class Deck
         return Hand;
     }
 
+    public static bool CheckForAce(List<Card> cards)
+    {
+        return cards.Exists(c => c.rank == "A");
+    }
+
     public void Initialize()
     {
         List<string> suits = new List<string>() { "♠", "♦", "♣", "♥" };
