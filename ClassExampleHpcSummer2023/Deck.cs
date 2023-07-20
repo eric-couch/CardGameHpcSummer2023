@@ -57,6 +57,44 @@ public class Deck
         return cardGroups.Any(c => c.count == 3);
     }
 
+    // method to test for full house
+    // a pair and a three of a kind
+    public static bool HasFullHouse(List<Card> cards)
+    {
+        return HasPair(cards) && HasThreeOfAKind(cards);
+    }
+
+    // method to test for flush
+    public static bool IsFlush(List<Card> cards)
+    {
+        return cards.GroupBy(c => c.suit).Any(g => g.Count() == 5);
+    }
+
+    //method to test for straight
+    public static bool IsStraight(List<Card> cards)
+    {
+        if (cards.Count != 5)
+        {
+            throw new ArgumentException("Hand must contain 5 cards.");
+        }
+
+        var sortedHand = cards.OrderBy(c => c.val).Select(c => c.val).ToList();
+        for (int cardIndex = 0; cardIndex < sortedHand.Count; cardIndex++)
+        {
+            if (sortedHand[cardIndex+1] - sortedHand[cardIndex] != 1)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // method to test for straight flush
+    public static bool IsStraightFlush(List<Card> cards)
+    {
+        return IsFlush(cards) && IsStraight(cards);
+    }
+
     public void Initialize()
     {
         List<string> suits = new List<string>() { "♠", "♦", "♣", "♥" };
