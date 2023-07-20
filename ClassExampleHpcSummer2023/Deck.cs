@@ -36,7 +36,25 @@ public class Deck
 
     public static bool CheckForAce(List<Card> cards)
     {
-        return cards.Exists(c => c.rank == "A");
+        return cards.Any(c => c.rank == "A");
+    }
+
+    public static bool HasPair(List<Card> cards)
+    {
+        var cardGroups = from c in cards
+                         group c by c.rank into g
+                         select new { rank = g.Key, count = g.Count() };
+
+        return cardGroups.Any(c => c.count == 2);
+    }
+
+    public static bool HasThreeOfAKind(List<Card> cards)
+    {
+        var cardGroups = from c in cards
+                         group c by c.rank into g
+                         select new { rank = g.Key, count = g.Count() };
+
+        return cardGroups.Any(c => c.count == 3);
     }
 
     public void Initialize()
@@ -53,36 +71,6 @@ public class Deck
                 Cards.Add(newCard);
             }
         }
-        
-        //string convertedRank = String.Empty;
-        //for (int value = 2; value <= 14; value++)
-        //{
-        //    switch (value)
-        //    {
-        //        case 11:
-        //            convertedRank = "J";
-        //            break;
-        //        case 12:
-        //            convertedRank = "Q";
-        //            break;
-        //        case 13:
-        //            convertedRank = "K";
-        //            break;
-        //        case 14:
-        //            convertedRank = "A";
-        //            break;
-        //        default:
-        //            convertedRank = value.ToString();
-        //            break;
-        //    }
-        //    Card thisCard = new Card("♠", convertedRank, value);
-        //    Cards.Add(thisCard);
-        //    thisCard = new Card("♦", convertedRank, value);
-        //    Cards.Add(thisCard);
-        //    thisCard = new Card("♣", convertedRank, value);
-        //    Cards.Add(thisCard);
-        //    thisCard = new Card("♥", convertedRank, value);
-        //    Cards.Add(thisCard);
-        //}
+
     }
 }

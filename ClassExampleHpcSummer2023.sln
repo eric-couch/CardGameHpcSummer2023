@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassExampleHpcSummer2023", "ClassExampleHpcSummer2023\ClassExampleHpcSummer2023.csproj", "{1591C5AE-4DF4-469D-AF3E-9CE549AB0199}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassExampleHpcSummer2023", "ClassExampleHpcSummer2023\ClassExampleHpcSummer2023.csproj", "{1591C5AE-4DF4-469D-AF3E-9CE549AB0199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerGameTest", "PokerGameTest\PokerGameTest.csproj", "{B8C492E2-F3D8-444F-8B97-15FC0C9BC42D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1591C5AE-4DF4-469D-AF3E-9CE549AB0199}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1591C5AE-4DF4-469D-AF3E-9CE549AB0199}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1591C5AE-4DF4-469D-AF3E-9CE549AB0199}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C492E2-F3D8-444F-8B97-15FC0C9BC42D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C492E2-F3D8-444F-8B97-15FC0C9BC42D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C492E2-F3D8-444F-8B97-15FC0C9BC42D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C492E2-F3D8-444F-8B97-15FC0C9BC42D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

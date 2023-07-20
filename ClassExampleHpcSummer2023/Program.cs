@@ -14,6 +14,6 @@ internal class Program
             Console.Write($"{thisCard.ToString()}\t");
         }
         Console.WriteLine($"Does this hand have an Ace? {Deck.CheckForAce(Hand)}");
-
+        Console.WriteLine($"Does this hand have a Pair? {Deck.HasPair(Hand)}");
     }
 }
